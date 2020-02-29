@@ -6,7 +6,7 @@ spring:
       driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
       url: jdbc:log4jdbc:mysql://localhost:3306/eladmin?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
       username: root
-      password: 123456
+      password: zzzzzz
 
       # 初始化配置
       initial-size: 3
@@ -65,8 +65,17 @@ swagger:
 
 # 文件存储路径
 file:
-  path: C:\eladmin\file\
-  avatar: C:\eladmin\avatar\
+  path: /Users/liuwei/work/eladmin-all/
+  avatar: /Users/liuwei/work/eladmin-all/
   # 文件大小 /M
   maxSize: 100
   avatarMaxSize: 5
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  #eureka.instance.prefer-ip-address  表示将自己的IP注册到Eureka Server上，
+  #如果不配置,会将当前服务提供者所在的主机名注册到Eureka Server上。
+  instance:
+    prefer-ip-address: true

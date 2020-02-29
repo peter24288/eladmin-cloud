@@ -1,28 +1,21 @@
-<h1 style="text-align: center">EL-ADMIN 后台管理系统</h1>
-<div style="text-align: center">
+<h1 style="text-align: center">EL-ADMIN-CLOUD 后台管理系统</h1>
 
-[![AUR](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](https://github.com/elunez/eladmin/blob/master/LICENSE)
-[![star](https://gitee.com/elunez/eladmin/badge/star.svg?theme=white)](https://gitee.com/elunez/eladmin)
-[![GitHub stars](https://img.shields.io/github/stars/elunez/eladmin.svg?style=social&label=Stars)](https://github.com/elunez/eladmin)
-[![GitHub forks](https://img.shields.io/github/forks/elunez/eladmin.svg?style=social&label=Fork)](https://github.com/elunez/eladmin)
-
-</div>
 
 #### 项目简介
-一个基于 Spring Boot 2.1.0 、 Spring Boot Jpa、 JWT、Spring Security、Redis、Vue的前后端分离的后台管理系统
-
-**开发文档：**  [https://docs.auauz.net/](https://docs.auauz.net)
-
-**体验地址：**  [https://auauz.net/](https://auauz.net/)
+一个基于 Spring Cloud Finchley.RELEASE、 Spring Cloud Gateway、Spring Cloud Eureka、 Spring Boot 2.1.0 、 Spring Boot Jpa、 JWT、Spring Security、Redis、Vue的前后端分离的后台管理系统
 
 **账号密码：** `admin/123456` (默认密码都是123456)
 
+#### 项目启动顺序
+eladmin-eureka
+eladmin-gateway
+eladmin-system
+
 #### 项目源码
 
-|     |   后端源码  |   前端源码  |
-|---  |--- | --- |
-|  github   |  https://github.com/elunez/eladmin   |  https://github.com/elunez/eladmin-web   |
-|  码云   |  https://gitee.com/elunez/eladmin   |  https://gitee.com/elunez/eladmin-web   |
+   github   
+   后端源码：https://github.com/peter24288/eladmin-cloud   
+   前端源码：https://github.com/peter24288/eladmin-cloud-web
 
 #### 主要特性
 - 使用最新技术栈，社区资源丰富。
@@ -53,7 +46,8 @@
 
 #### 项目结构
 项目采用按功能分模块开发方式，将通用的配置放在公共模块，```system```模块为系统核心模块也是项目入口模块，```logging``` 模块为系统的日志模块，```tools``` 为第三方工具模块，包含了图床、邮件、七牛云、支付宝，```generator``` 为系统的代码生成模块
-
+- eladmin-eureka 注册中心
+- eladmin-gateway 网关(动态路由、集群限流、完美跨域)
 - eladmin-common 公共模块
     - annotation 为系统自定义注解
     - aspect 自定义注解的切面
@@ -70,26 +64,21 @@
 - eladmin-generator 系统代码生成模块
     
 
-#### 系统预览
-<table>
-    <tr>
-        <td><img src="https://i.loli.net/2019/05/18/5cdf77fa8144d68788.png"/></td>
-        <td><img src="https://i.loli.net/2019/05/18/5cdf7763993e361778.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://i.loli.net/2019/05/18/5cdf7763971d453615.png"/></td>
-        <td><img src="https://i.loli.net/2019/05/18/5cdf77632e85a60423.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://i.loli.net/2019/05/18/5cdf77632b4b090165.png"/></td>
-        <td><img src="https://i.loli.net/2019/05/18/5cdf77639929277783.png"/></td>
-    </tr>
-    <tr>   
- <td><img src="https://i.loli.net/2019/05/18/5cdf78969adc389599.png"/></td>
-    </tr>
-</table>
-
-#### 项目捐赠
-项目的发展离不开你的支持，请作者喝杯咖啡吧☕  [Donate](https://docs.auauz.net/#/jz)
 #### 反馈交流
-- QQ交流群：891137268
+- 个人QQ：68521817、71876181
+
+#### 特别说明：
+本项目参考eladmin项目源码，把spring boot架构升级spring Cloud，建议初学者先学习eladmin开发文档如下：
+
+**开发文档：**  [https://docs.auauz.net/](https://docs.auauz.net)
+
+**体验地址：**  [https://auauz.net/](https://auauz.net/)
+
+**账号密码：** `admin/123456` (默认密码都是123456)
+
+#### 项目源码
+
+|     |   后端源码  |   前端源码  |
+|---  |--- | --- |
+|  github   |  https://github.com/elunez/eladmin   |  https://github.com/elunez/eladmin-web   |
+|  码云   |  https://gitee.com/elunez/eladmin   |  https://gitee.com/elunez/eladmin-web   |

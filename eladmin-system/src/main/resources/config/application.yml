@@ -2,6 +2,8 @@ server:
   port: 8000
 
 spring:
+  application:
+    name: eladmin-system #用于指定到ES上的应用名字
   freemarker:
     check-template-location: false
   profiles:

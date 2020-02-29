@@ -1,0 +1,64 @@
+spring:
+  redis:
+    #数据库索引
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 6000
+    # 连接池最大连接数（使用负值表示没有限制
+    PoolMaxActive: 3
+    # 连接池最大阻塞等待时间（使用负值表示没有限制）
+    PoolMaxWait: 1
+    # 连接池中的最大空闲连接
+    PoolMaxIdle: 1
+    # 连接池中的最小空闲连接
+    PoolMinIdle: 1
+  cloud:
+    gateway:
+      routes:
+      - id: eladmin-system
+        uri: lb://ELADMIN-SYSTEM
+        predicates:
+          - Header=X-Request-Id,eladmin-system
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging: ## Spring Cloud Gateway的日志配置
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: false
+
+config:
+  jwt:
+    # 加密密钥
+    secret: iwqjhda8232bjgh432[cicada-smile]
+    # token有效时长
+    expire: 360000
+    # header 名称
+    header: Authorization
+
+# 演示环境
+preview:
+  ignores:
+    - /api/user/login/mobile  # 授权服务
+    - resetPassword   # 重置密码
+    - register
+    - checkExist
+    - updateInfo
+    - updateAvatar
+    - attachment
+    - api/exam  # 考试服务
+    - api/msc

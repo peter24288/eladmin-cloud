@@ -1,0 +1,9 @@
+server:
+  port: 8761 #服务端口号
+spring:
+  application:
+    name: eladmin-eureka #用于指定到ES上的应用名字
+  profiles:
+    active: dev   #默认使用配置文件
+
+

@@ -16,6 +16,7 @@
         <module>eladmin-tools</module>
 		<module>eladmin-monitor</module>
         <module>eladmin-generator</module>
+        <module>eladmin-gateway</module>
     </modules>
 
     <name>EL-ADMIN后台管理系统</name>
@@ -41,6 +42,7 @@
     </properties>
 
     <dependencies>
+
         <!--Spring boot start-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
